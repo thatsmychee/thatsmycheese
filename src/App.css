@@ -1,0 +1,46 @@
+.app {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glossy overlay */
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Container for interactive elements */
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+/* Clickable menu button overlay */
+.menu-button {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  width: 120px;
+  height: 90px;
+  cursor: pointer;
+  z-index: 10;
+  background: transparent;
+  border: 2px dashed transparent;
+  transition: all 0.3s ease;
+}
+
+.menu-button:hover {
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}

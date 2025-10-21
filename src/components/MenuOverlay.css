@@ -1,0 +1,59 @@
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100vh;
+  background: rgba(60, 50, 80, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  transition: left 0.3s ease;
+  padding: 80px 30px 30px;
+  box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.menu-overlay.open {
+  left: 0;
+}
+
+.menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.menu-close:hover {
+  transform: rotate(90deg);
+}
+
+.menu-items {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-items li {
+  margin: 30px 0;
+}
+
+.menu-items a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  transition: all 0.3s;
+  display: block;
+  padding: 10px;
+  border-left: 3px solid transparent;
+}
+
+.menu-items a:hover {
+  color: #c9b3ff;
+  border-left: 3px solid #c9b3ff;
+  padding-left: 20px;
+}
