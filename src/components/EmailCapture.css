@@ -1,0 +1,35 @@
+.email-capture {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  z-index: 10;
+}
+
+.email-input {
+  width: 100%;
+  padding: 15px 20px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.email-input::placeholder {
+  color: transparent;
+}
+
+.email-input:focus {
+  background: rgba(80, 70, 100, 0.3);
+  border-radius: 25px;
+}
+
+.submit-btn {
+  display: none;
+}
