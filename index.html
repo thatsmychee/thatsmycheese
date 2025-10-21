@@ -20,27 +20,82 @@
     body {
       /* Display your sketch as the full background */
       background-image: url('./background.jpg');
-      background-size: contain; /* Changed from 'cover' to show full image */
+      background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
-      background-attachment: fixed;
-      
-      /* Fallback color that matches your sketch */
       background-color: #5b5478;
+      
+      /* Very subtle Y2K enhancement - barely visible */
+      position: relative;
     }
 
-    /* Container for any future interactive elements */
+    /* Subtle glossy overlay - very light so sketch shows through */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Container for future interactive elements */
     .container {
       width: 100%;
       height: 100%;
       position: relative;
+      z-index: 2;
+    }
+
+    /* Responsive scaling */
+    /* Mobile - portrait */
+    @media (max-width: 768px) and (orientation: portrait) {
+      body {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    /* Mobile - landscape */
+    @media (max-width: 768px) and (orientation: landscape) {
+      body {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    /* Tablet */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      body {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    /* Desktop - normal screens */
+    @media (min-width: 1025px) and (max-width: 1920px) {
+      body {
+        background-size: cover;
+        background-position: center;
+      }
+    }
+
+    /* Large desktop - show full image */
+    @media (min-width: 1921px) {
+      body {
+        background-size: contain;
+        background-position: center;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- Your sketch background is displayed here -->
-    <!-- We can add interactive elements later -->
+    <!-- Your sketch is the background -->
+    <!-- Interactive elements will be added here later -->
   </div>
 </body>
 </html>
